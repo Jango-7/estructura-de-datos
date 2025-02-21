@@ -28,12 +28,31 @@ Requisitos:
 - Al final, imprime el total de vocales encontradas.
 '''
 
-texto = input('Ingresa una frase: ').lower()
-contador = 0
-vocals = ["a", "e", "i", "o", "u"]
+# texto = input('Ingresa una frase: ').lower()
+# contador = 0
+# vocals = ["a", "e", "i", "o", "u"]
 
-for letra in texto:
-  if letra == vocals:
-    contador += 1
+# for letra in texto:
+#   if letra in vocals:
+#     contador += 1
 
-print(f'Cantidad de vocales: {contador}')
+# print(f'Cantidad de vocales: {contador}')
+
+# ----------------------------------------------
+# ----------------------------------------------
+
+'''
+Escribe un programa que solicite al usuario un número entero positivo n. Luego, el programa debe imprimir todos los números pares desde 0 hasta n (inclusive), pero solo si el número es divisible por 4.
+'''
+
+# numeros = int(input("Ingresa un numero entero positivo: "))
+
+# for numero in range(numeros + 1):
+#     if numero % 4 == 0:
+#         print(numero)
+
+# ----------------------------------------------
+# ----------------------------------------------
+
+'''Escribe un programa que solicite al usuario una palabra (cadena de texto). Luego, el programa debe imprimir cada letra de la palabra junto con su posición (índice) en la palabra.'''
+
