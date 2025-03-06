@@ -78,59 +78,80 @@
 # ABREVIACIONES EN LISTAS
 # ----------------------------
 
-frutas = ["Manzana", "banana", "Pera", "Mandarina", "Fresa", "Piña"]
+# frutas = ["Manzana", "banana", "Pera", "Mandarina", "Fresa", "Piña"]
 
-# Quiero hacer una copia de "frutas", pero solo con las frutas que contengan la letra e... -------
+# # Quiero hacer una copia de "frutas", pero solo con las frutas que contengan la letra e... -------
 
-# frutas_con_e = []
+# # frutas_con_e = []
 
-# for fruta in frutas:
-#     if "e" in fruta:
-#         frutas_con_e.append(fruta)
+# # for fruta in frutas:
+# #     if "e" in fruta:
+# #         frutas_con_e.append(fruta)
 
+# # print(frutas_con_e)
+
+# # Ahora, como puedo reducir este codigo? ---------------
+
+# # frutas_con_e = [fruta for fruta in frutas if "e" in fruta]
+
+# # print(frutas_con_e)
+
+# # Tambien puedo usarlo para sacar un elemento ---------
+# # <<Traeme la fruta por cada fruta en la lista de frutas, si la fruta es distinta de mandarina.>>
+# frutas_con_e = [fruta for fruta in frutas if fruta != "Mandarina"]
 # print(frutas_con_e)
 
-# Ahora, como puedo reducir este codigo? ---------------
+# # Para poner todo en Mayuscula
+# # << Traeme la fruta en Mayuscula, por cada fruta en la lista de frutas>>
+# mayusculas = [fruta.upper() for fruta in frutas]
+# print(mayusculas)
 
-# frutas_con_e = [fruta for fruta in frutas if "e" in fruta]
+# # Quiero que me imprima la fruta si es distinta a PERA, y sino es distinta, que imprima AGUACATE. 
+# frutas2 = [fruta if fruta != "Pera" else "Aguacate" for fruta in frutas]
+# print(frutas2)
 
-# print(frutas_con_e)
+# # ----------------------------
+# # ORDENAMIENTO DE LISTAS
+# # ----------------------------
 
-# Tambien puedo usarlo para sacar un elemento ---------
-# <<Traeme la fruta por cada fruta en la lista de frutas, si la fruta es distinta de mandarina.>>
-frutas_con_e = [fruta for fruta in frutas if fruta != "Mandarina"]
-print(frutas_con_e)
+# # Voy a ordenar las frutas alfabeticamente
+# frutas.sort()
+# print(frutas)
 
-# Para poner todo en Mayuscula
-# << Traeme la fruta en Mayuscula, por cada fruta en la lista de frutas>>
-mayusculas = [fruta.upper() for fruta in frutas]
-print(mayusculas)
+# numeros = [9,999,88,1,2,3]
+# numeros.sort()
+# print(numeros)
 
-# Quiero que me imprima la fruta si es distinta a PERA, y sino es distinta, que imprima AGUACATE. 
-frutas2 = [fruta if fruta != "Pera" else "Aguacate" for fruta in frutas]
-print(frutas2)
+# # Ordenar al reves
+# frutas.sort(reverse=True)
+# print(frutas)
 
-# ----------------------------
-# ORDENAMIENTO DE LISTAS
-# ----------------------------
+# # Sort es key sensitive, por lo cual si mi lista tiene algunos elementos con mayuscula y otros no, los va ordenar distinto. Para que ordene alfabeticamente independiente de las mayusculas, debo hacer esto:
 
-# Voy a ordenar las frutas alfabeticamente
-frutas.sort()
+# frutas.sort(key=str.lower)
+# print(frutas)
+
+# # Asi le doy vuelta al orden, de atras para adelante
+# frutas.reverse()
+# print(frutas)
+
+# ----------------------------------------------
+# COPIAR Y JUNTAR LISTAS
+# ----------------------------------------------
+
+frutas1 = ["Mandarina", "Fresa", "Piña"]
+frutas2 = ["Manzana", "banana", "Pera"]
+
+#COPIAR
+copia_frutas = frutas1.copy()
+print(copia_frutas)
+
+copia_frutas2 = list(frutas1)
+print(copia_frutas2)
+
+# JUNTAR
+frutas = frutas1 + frutas2
 print(frutas)
 
-numeros = [9,999,88,1,2,3]
-numeros.sort()
-print(numeros)
-
-# Ordenar al reves
-frutas.sort(reverse=True)
-print(frutas)
-
-# Sort es key sensitive, por lo cual si mi lista tiene algunos elementos con mayuscula y otros no, los va ordenar distinto. Para que ordene alfabeticamente independiente de las mayusculas, debo hacer esto:
-
-frutas.sort(key=str.lower)
-print(frutas)
-
-# Asi le doy vuelta al orden, de atras para adelante
-frutas.reverse()
-print(frutas)
+frutas1.extend(frutas2)
+print(frutas1)
